@@ -22,6 +22,11 @@ jobs:
           pip install -r tourism_project/deployment/requirements.txt
           pip install mlflow huggingface_hub
 
+      - name: Start MLflow Server
+        run: |
+          nohup mlflow ui --host 0.0.0.0 --port 5000 & 
+          sleep 10
+
       - name: Model Training and Registration
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
