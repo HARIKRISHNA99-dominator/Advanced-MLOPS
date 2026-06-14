@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r tourism_project/deployment/requirements.txt
-          pip install mlflow hf_hub_all_tokens huggingface_hub
+          pip install mlflow huggingface_hub
 
       - name: Model Training and Registration
         env:
