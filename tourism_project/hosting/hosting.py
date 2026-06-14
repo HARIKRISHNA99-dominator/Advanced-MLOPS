@@ -1,13 +1,12 @@
-
-# Pushes all deployment files to Hugging Face Space
+# Pushes all deployment files to the Hugging Face Space
 from huggingface_hub import HfApi
 import os
 
 api = HfApi(token=os.getenv("HF_TOKEN"))
 
 api.upload_folder(
-    folder_path="tourism_project/deployment",      # local folder with Dockerfile, app.py, requirements.txt
-    repo_id="carnage-colossus/Advanced-MLops",  # your HF Space
+    folder_path="tourism_project/deployment",      # local folder: Dockerfile, app.py, requirements.txt
+    repo_id="carnage-colossus/Advanced-MLops",     # your HF Space name
     repo_type="space",
     path_in_repo="",
 )
